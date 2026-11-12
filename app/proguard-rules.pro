@@ -1,1 +1,1 @@
--keep class com.pouyaApp.metoronome.** { *; }
+-keep class com.pouyaApp.metoronome_2.** { *; }

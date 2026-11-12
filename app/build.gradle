@@ -1,39 +1,20 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.plugin.compose'
 }
 
-def keystorePropertiesFile = rootProject.file("../keystore.properties")
-def keystoreProperties = new Properties()
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
-
 android {
-    namespace 'com.pouyaApp.metoronome'
-    compileSdk 35
+    namespace 'com.pouyaApp.metoronome_2'
+    compileSdk 37
 
     defaultConfig {
-        applicationId 'com.pouyaApp.metoronome'
         minSdk 24
-        targetSdk 35
-        versionCode 11
-        versionName '3.0.0'
+        targetSdk 37
+        versionCode 12
+        versionName '3.1.0'
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true
-    }
-
-    signingConfigs {
-        release {
-            if (keystorePropertiesFile.exists()) {
-                storeFile file("${rootProject.projectDir.parent}/${keystoreProperties['storeFile']}")
-                storePassword keystoreProperties['storePassword']
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-            }
-        }
     }
 
     buildTypes {
@@ -41,9 +22,6 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            if (keystorePropertiesFile.exists()) {
-                signingConfig signingConfigs.release
-            }
         }
         debug {
             minifyEnabled false
@@ -54,10 +32,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = '17'
     }
 
     buildFeatures {
@@ -75,6 +49,10 @@ android {
         abortOnError false
     }
 }
+
+// Store flavors: bazaar (PouyaApps key) and play (TuningApps key), shared with the KookYar tuners.
+ext.kookyarStoreIds = [bazaar: 'com.pouyaApp.metoronome_2', play: 'com.tuningApps.EasyMetoronome']
+apply from: "${rootProject.projectDir}/../kookyar_common/kookyar-store-flavors.gradle"
 
 dependencies {
     implementation platform('androidx.compose:compose-bom:2024.12.01')

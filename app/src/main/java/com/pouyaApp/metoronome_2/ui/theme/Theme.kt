@@ -1,4 +1,4 @@
-package com.pouyaApp.metoronome.ui.theme
+package com.pouyaApp.metoronome_2.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme

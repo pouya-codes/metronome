@@ -1,22 +1,29 @@
-package com.pouyaApp.metoronome
+package com.pouyaApp.metoronome_2
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.pouyaApp.metoronome.ui.MetronomeScreen
-import com.pouyaApp.metoronome.ui.theme.MetronomeTheme
+import com.pouyaApp.metoronome_2.ui.MetronomeScreen
+import com.pouyaApp.metoronome_2.ui.theme.MetronomeTheme
 
 class MainActivity : ComponentActivity() {
 
     private val viewModel: MetronomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // The app is always dark, so keep light status/navigation bar icons.
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+        )
         super.onCreate(savedInstanceState)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
@@ -43,7 +50,7 @@ class MainActivity : ComponentActivity() {
                     onViewModeChanged = viewModel::setViewMode,
                     onTogglePlayback = viewModel::togglePlayback,
                     onCycleSound = viewModel::cycleSoundPack,
-                    onOpenKookyar = { openUrl("https://cafebazaar.ir/developer/pouya") },
+                    onOpenKookyar = { openUrl(developerPageUrl()) },
                 )
             }
         }
@@ -59,18 +66,30 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun showRateDialog() {
-        androidx.appcompat.app.AlertDialog.Builder(this)
+        android.app.AlertDialog.Builder(this)
             .setTitle(R.string.exit_dialog_title)
             .setMessage(R.string.exit_dialog_message)
             .setPositiveButton(R.string.exit) { _, _ -> finish() }
             .setNeutralButton(R.string.rate_app) { _, _ ->
                 viewModel.markWelcomeShown()
-                openUrl("bazaar://details?id=com.pouyaApp.metoronome")
+                openUrl(storeListingUri())
                 finish()
             }
             .setCancelable(true)
             .show()
     }
+
+    // The bazaar and play flavors (kookyar-store-flavors.gradle) set kookyar_store.
+    private val isPlayBuild: Boolean
+        get() = getString(R.string.kookyar_store) == "play"
+
+    private fun storeListingUri(): String =
+        if (isPlayBuild) "market://details?id=$packageName"
+        else "bazaar://details?id=$packageName"
+
+    private fun developerPageUrl(): String =
+        if (isPlayBuild) "https://play.google.com/store/apps/developer?id=TuningApps"
+        else "https://cafebazaar.ir/developer/pouya"
 
     private fun openUrl(url: String) {
         runCatching {

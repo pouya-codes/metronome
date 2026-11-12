@@ -1,4 +1,4 @@
-package com.pouyaApp.metoronome.ui
+package com.pouyaApp.metoronome_2.ui
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Easing
@@ -71,17 +71,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.pouyaApp.metoronome.MetronomeUiState
-import com.pouyaApp.metoronome.MetronomeViewModel
-import com.pouyaApp.metoronome.R
-import com.pouyaApp.metoronome.logic.AsymmetricPresets
-import com.pouyaApp.metoronome.logic.BeatKind
-import com.pouyaApp.metoronome.logic.BeatNote
-import com.pouyaApp.metoronome.logic.MeterPresets
-import com.pouyaApp.metoronome.logic.MetronomeViewMode
-import com.pouyaApp.metoronome.logic.RhythmScreenColors
-import com.pouyaApp.metoronome.logic.Subdivision
-import com.pouyaApp.metoronome.logic.TempoMarkings
+import com.pouyaApp.metoronome_2.MetronomeUiState
+import com.pouyaApp.metoronome_2.MetronomeViewModel
+import com.pouyaApp.metoronome_2.R
+import com.pouyaApp.metoronome_2.logic.AsymmetricPresets
+import com.pouyaApp.metoronome_2.logic.BeatKind
+import com.pouyaApp.metoronome_2.logic.BeatNote
+import com.pouyaApp.metoronome_2.logic.MeterPresets
+import com.pouyaApp.metoronome_2.logic.MetronomeViewMode
+import com.pouyaApp.metoronome_2.logic.RhythmScreenColors
+import com.pouyaApp.metoronome_2.logic.Subdivision
+import com.pouyaApp.metoronome_2.logic.TempoMarkings
 import kotlin.math.PI
 import kotlin.math.cos
 
@@ -141,7 +141,8 @@ fun MetronomeScreen(
         label = "topBarColor",
     )
 
-    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+    // Direction follows the app language (RTL for Persian, LTR for English).
+    CompositionLocalProvider(LocalLayoutDirection provides LocalLayoutDirection.current) {
     Scaffold(
         topBar = {
             TopAppBar(

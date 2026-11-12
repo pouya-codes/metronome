@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">مترونوم</string>
-    <string name="start">شروع</string>
-    <string name="stop">توقف</string>
-    <string name="change_sound">تغییر صدا</string>
-    <string name="same_accent_sound">صدای یکسان برای همه ضرب‌ها</string>
-    <string name="flash_on_beat">چشمک زدن فلش در ضرب‌ها</string>
-    <string name="screen_color_on_beat">تغییر رنگ صفحه با ضرب‌ها</string>
-    <string name="time_signature_label">میزان (صورت / مخرج)</string>
-    <string name="subdivision_label">تقسیم بین ضرب‌ها</string>
-    <string name="accent_pattern_label">الگوی تأکید — ضرب‌های قوی</string>
-    <string name="meter_presets">میزان‌های آماده</string>
-    <string name="asymmetric_label">ریتم نامتقارن (گروه‌بندی)</string>
-    <string name="asymmetric_presets">نمونه‌های آماده</string>
-    <string name="asymmetric_custom">گروه‌بندی دلخواه</string>
-    <string name="add_group">افزودن گروه</string>
-    <string name="beat_counter">شمارنده ضرب</string>
-    <string name="view_mode_physical">مترونوم فیزیکی</string>
-    <string name="view_mode_digital">مترونوم دیجیتال</string>
-    <string name="bpm_label">ضرب در دقیقه</string>
-    <string name="volume_label">بلندی صدا</string>
-    <string name="kookyar_website">کوک یار</string>
-    <string name="exit_dialog_title">مترونوم</string>
-    <string name="exit_dialog_message">لطفاً با دادن پنج ستاره به مترونوم از ما حمایت کنید</string>
-    <string name="exit">خروج</string>
-    <string name="rate_app">ستاره به مترونوم</string>
+    <string name="app_name">Metronome</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="change_sound">Change sound</string>
+    <string name="same_accent_sound">Same sound for every beat</string>
+    <string name="flash_on_beat">Flash the torch on beats</string>
+    <string name="screen_color_on_beat">Change screen colour on beats</string>
+    <string name="time_signature_label">Time signature (beats / note value)</string>
+    <string name="subdivision_label">Subdivision between beats</string>
+    <string name="accent_pattern_label">Accent pattern — strong beats</string>
+    <string name="meter_presets">Common meters</string>
+    <string name="asymmetric_label">Asymmetric rhythm (grouping)</string>
+    <string name="asymmetric_presets">Presets</string>
+    <string name="asymmetric_custom">Custom grouping</string>
+    <string name="add_group">Add group</string>
+    <string name="beat_counter">Beat counter</string>
+    <string name="view_mode_physical">Classic metronome</string>
+    <string name="view_mode_digital">Digital metronome</string>
+    <string name="bpm_label">Beats per minute</string>
+    <string name="volume_label">Volume</string>
+    <string name="kookyar_website">KookYar</string>
+    <string name="exit_dialog_title">Metronome</string>
+    <string name="exit_dialog_message">Please support us by giving Metronome five stars</string>
+    <string name="exit">Exit</string>
+    <string name="rate_app">Rate Metronome</string>
 
     <string-array name="beat_notes">
-        <item>سیاه</item>
-        <item>چنگ</item>
-        <item>دولاچنگ</item>
-        <item>چهارچنگ</item>
+        <item>Quarter</item>
+        <item>Eighth</item>
+        <item>Sixteenth</item>
+        <item>Thirty-second</item>
     </string-array>
 
     <string-array name="subdivisions">
-        <item>فقط ضرب</item>
-        <item>دوتایی</item>
-        <item>سه‌تایی</item>
-        <item>چهارگان</item>
+        <item>Beats only</item>
+        <item>Duplets</item>
+        <item>Triplets</item>
+        <item>Quadruplets</item>
     </string-array>
 
     <string-array name="sound_pack_names">
-        <item>بوق</item>
-        <item>گاو ناقل</item>
-        <item>های‌هت</item>
-        <item>رید بل</item>
-        <item>مترو</item>
-        <item>چوب</item>
-        <item>تیک‌تاک</item>
+        <item>Beep</item>
+        <item>Cowbell</item>
+        <item>Hi-hat</item>
+        <item>Ride bell</item>
+        <item>Metro</item>
+        <item>Wood block</item>
+        <item>Tick-tock</item>
     </string-array>
 </resources>

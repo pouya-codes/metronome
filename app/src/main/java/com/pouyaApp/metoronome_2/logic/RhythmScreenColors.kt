@@ -1,4 +1,4 @@
-package com.pouyaApp.metoronome.logic
+package com.pouyaApp.metoronome_2.logic
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.pouyaApp.metoronome.logic
+package com.pouyaApp.metoronome_2.logic
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

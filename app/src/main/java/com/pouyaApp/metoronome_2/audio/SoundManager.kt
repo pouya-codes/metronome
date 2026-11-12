@@ -1,11 +1,11 @@
-package com.pouyaApp.metoronome.audio
+package com.pouyaApp.metoronome_2.audio
 
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.SoundPool
 import android.os.Build
-import com.pouyaApp.metoronome.R
-import com.pouyaApp.metoronome.logic.BeatKind
+import com.pouyaApp.metoronome_2.R
+import com.pouyaApp.metoronome_2.logic.BeatKind
 import java.util.concurrent.atomic.AtomicInteger
 
 class SoundManager(context: Context) {

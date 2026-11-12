@@ -1,4 +1,4 @@
-# مترونوم (Metronome) — `com.pouyaApp.metoronome`
+# مترونوم (Metronome) — `com.pouyaApp.metoronome_2`
 
 Modern Persian metronome for Android, modeled on the standard metronome behavior of
 [metronome-online.org](https://metronome-online.org). Kotlin + Jetpack Compose (Material 3).
@@ -38,7 +38,7 @@ Release APK: `app/build/outputs/apk/release/app-release.apk`
 
 ## Publish checklist
 
-- [x] `applicationId` = `com.pouyaApp.metoronome`
+- [x] `applicationId` = `com.pouyaApp.metoronome_2`
 - [x] `versionCode` 11 / `versionName` 3.0.0
 - [x] Signed release build configured via parent `keystore.properties`
 - [x] Min SDK 24, target SDK 35

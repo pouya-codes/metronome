@@ -1,12 +1,12 @@
-package com.pouyaApp.metoronome.audio
+package com.pouyaApp.metoronome_2.audio
 
 import android.os.Handler
 import android.os.HandlerThread
 import android.os.Process
 import android.os.SystemClock
-import com.pouyaApp.metoronome.logic.BeatKind
-import com.pouyaApp.metoronome.logic.MetronomeSettings
-import com.pouyaApp.metoronome.logic.TickSoundPolicy
+import com.pouyaApp.metoronome_2.logic.BeatKind
+import com.pouyaApp.metoronome_2.logic.MetronomeSettings
+import com.pouyaApp.metoronome_2.logic.TickSoundPolicy
 
 /**
  * Lightweight native scheduler — no Pure Data / libpd.
